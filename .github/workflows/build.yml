@@ -34,7 +34,7 @@
             ANDROID_NDK_HOME: ${{ github.workspace }}/.buildozer/android/platform/android-ndk-r21b
 
         - name: Upload APK
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v4
           with:
             name: GachaSimulator.apk
             path: bin/*.apk
