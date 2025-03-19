@@ -1,0 +1,16 @@
+[INFO   ] Logger: Record log in /storage/emulated/0/Pydroid/Gacha Sim (Kivy w ChatGPT) 2/.kivy/logs/kivy_25-02-28_51.txt
+[INFO   ] Kivy: v2.2.1
+[INFO   ] Kivy: Installed at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.11/site-packages/kivy/__init__.py"
+[INFO   ] Python: v3.11.4 (main, Sep 30 2023, 10:54:38) [GCC 11.4.0]
+[INFO   ] Python: Interpreter at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/bin/python3"
+[INFO   ] Logger: Purge log fired. Processing...
+[INFO   ] Logger: Purge finished!
+[INFO   ] Factory: 190 symbols loaded
+[INFO   ] Image: Providers: img_tex, img_dds, img_sdl2, img_pil (img_ffpyplayer ignored)
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/storage/emulated/0/Pydroid/Gacha Sim (Kivy w ChatGPT) 2/main.py", line 16, in <module>
+[WARNING] stderr:     class GachaScreen(Screen):
+[WARNING] stderr:   File "/storage/emulated/0/Pydroid/Gacha Sim (Kivy w ChatGPT) 2/main.py", line 18, in GachaScreen
+[WARNING] stderr:     cooldown_time = 10 - gd.get_cooldown_reduction()  # Set cooldown duration
+[WARNING] stderr:                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+[WARNING] stderr: AttributeError: module 'game_data' has no attribute 'get_cooldown_reduction'. Did you mean: 'get_total_cooldown_reduction'?

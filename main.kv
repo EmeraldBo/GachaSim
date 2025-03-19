@@ -1,0 +1,398 @@
+ScreenManager:
+	MainMenu:
+	GachaScreen:
+	InventoryScreen:
+	OtherScreen:
+	ShopScreen:
+	SavesScreen:
+	SaveMenu:
+	LoadMenu:
+	MineScreen:
+	UpdateLog:
+
+<MainMenu>:
+	name: "menu"
+	BoxLayout:
+		orientation: 'vertical'
+		spacing: 10
+		padding: 20
+
+		Label:
+			text: "Gacha Simulator"
+			font_size: 30
+			size_hint: 1, 0.2
+
+		Button:
+			text: "Pull Characters"
+			size_hint: 1, 0.2
+			on_release: app.root.current = "gacha"
+			
+		BoxLayout:
+			orientation: "vertical"
+			size_hint: 1, 0.25
+			Button:
+				text: "View Inventory"
+				on_release: app.root.current = "inventory"
+			BoxLayout:
+				Button:
+					text: "Saves"
+					on_release: app.root.current = "saves"
+				Button:
+					text: "Other"
+					on_release: app.root.current = "other"
+
+<GachaScreen>:
+	name: "gacha"
+	BoxLayout:
+		orientation: 'vertical'
+		spacing: 10
+		padding: 20
+
+		Label:
+			text: "Gacha Pull"
+			font_size: 30
+			size_hint: 1, 0.2
+
+		Button:
+			id: pull_button  # ID for cooldown control
+			text: "Pull 1 Character"
+			size_hint: 1, 0.2
+			on_release: root.pull_character()
+
+		Label:
+			id: pull_result
+			text: "Pull a character!"
+			size_hint: 1, 0.2
+
+		Label:
+			id: cooldown_label
+			text: ""
+			font_size: 20
+			size_hint: 1, 0.1
+			color: (1, 0, 0, 1)  # Red text for visibility
+
+		Button:
+			text: "Back to Menu"
+			size_hint: 1, 0.2
+			on_release: app.root.current = "menu"
+			
+<InventoryScreen>:
+	name: "inventory"
+	BoxLayout:
+		orientation: 'vertical'
+		spacing: 10
+		padding: 20
+		
+		Label:
+			id: money_label
+			text: "Money: $500"
+			font_size: 75
+			color: (1, 1, 0, 1)
+			size_hint: 1, 0.25
+
+
+		Label:
+			text: "Inventory"
+			font_size: 30
+			size_hint: 1, 0.2
+
+		ScrollView:
+			BoxLayout:
+				orientation: "vertical"
+				size_hint_y: None
+				height: self.minimum_height
+				Label:
+					id: inventory_list
+					text: "No characters owned."
+					markup: True
+					size_hint_y: None
+					text_size: self.width, None
+					height: self.texture_size[1]
+				Label:
+					id: items_list
+					text: "No items owned."
+					markup: True
+					size_hint_y: None
+					text_size: self.width, None
+					height: self.texture_size[1]
+		Button:
+			text: "Sell"
+			size_hint: 1, 0.2
+			on_release: root.sell_character()
+		
+		
+		Button:
+			text: "Back to Menu"
+			size_hint: 1, 0.2
+			on_release: app.root.current = "menu"
+
+<OtherScreen>:
+	name: "other"
+	BoxLayout:
+		orientation: "vertical"
+		spacing: 10
+		padding: 20
+		ScrollView:
+			BoxLayout:
+				orientation: "vertical"
+				size_hint_y: None
+				height: self.minimum_height
+				Button:
+					text: "Shop"
+					size_hint_y: None
+					height: 150
+					on_release: app.root.current = "shop"
+				Button:
+					text: "Mining"
+					size_hint_y: None
+					height: 150
+					on_release: app.root.current = "mining"
+				Button:
+					text: "Update Log"
+					size_hint_y: None
+					height: 150
+					on_release: app.root.current = "update"
+		Button:
+			text: "Back to Menu"
+			size_hint: 1, 0.2
+			on_release: app.root.current = "menu"
+
+<ShopScreen>:
+	name: "shop"
+	BoxLayout:
+		orientation: 'vertical'
+		spacing: 10
+		padding: 20
+
+		Label:
+			text: "Shop"
+			font_size: 30
+			size_hint: 1, 0.2
+			
+		Label:
+			id: money_label
+			text: "Money: $500"
+			size_hint: 1, 0.2
+			  
+		ScrollView:
+			Label:
+				id: shop_list
+				text: "Loading shop items..."
+				size_hint_y: None
+				text_size: self.width, None
+				height: self.texture_size[1]
+
+		ScrollView:
+			BoxLayout:
+				orientation: "vertical"
+				size_hint_y: None
+				height: self.minimum_height
+			   
+				Label:
+					text: "Plushies"
+					size_hint_y: None
+					height: 150
+				Button:
+					text: "Buy Chimer Plushie ($2500)"
+					size_hint_y: None
+					height: 150
+					on_release: root.buy_item("Plushies", "Chimer Plushie")
+				Button:
+					text: "Buy Ketsueki Plushie ($2250)"
+					size_hint_y: None
+					height: 150
+					on_release: root.buy_item("Plushies", "Ketsueki Plushie")
+				Button:
+					text: "Buy Keith Plushie ($1000)"
+					size_hint_y: None
+					height: 150
+					on_release: root.buy_item("Plushies", "Keith Plushie")
+				Button:
+					text: "Buy Sah Plushie ($1000)"
+					size_hint_y: None
+					height: 150
+					on_release: root.buy_item("Plushies", "Sah Plushie")
+					
+				Label:
+					text: "Tokens"
+					size_hint_y: None
+					height: 150
+				Button:
+					text: "Buy Bronze Token ($250)"
+					size_hint_y: None
+					height: 150
+					on_release: root.buy_item("Tokens", "Bronze Token")
+				Button:
+					text: "Buy Silver Token ($250)"
+					size_hint_y: None
+					height: 150
+					on_release: root.buy_item("Tokens", "Silver Token")
+				Button:
+					text: "Buy Gold Token ($250)"
+					size_hint_y: None
+					height: 150
+					on_release: root.buy_item("Tokens", "Gold Token")
+				Button:
+					text: "Buy Diamond Token ($250)"
+					size_hint_y: None
+					height: 150
+					on_release: root.buy_item("Tokens", "Diamond Token")
+
+
+
+
+		Button:
+			text: "Back"
+			size_hint: 1, 0.2
+			on_release: app.root.current = "other"
+
+<SavesScreen>:
+	name: "saves"
+	BoxLayout:
+		orientation: "vertical"
+		spacing: 10
+		padding: 20
+		Button:
+			text: "Save"
+			size_hint: 1, 0.5
+			on_release: app.root.current = "savemenu"
+
+		Button:
+			text: "Load"
+			size_hint: 1, 0.5
+			on_release: app.root.current = "loadmenu"
+
+		Button:
+			text: "Back"
+			size_hint: 1, 0.2
+			on_release: app.root.current = "menu"
+
+<SaveMenu>:
+	name: "savemenu"
+	BoxLayout:
+		orientation: "vertical"
+		padding: 20
+		spacing: 10
+		Label:
+			id: save_label
+			text: ""
+			size_hint: 1, 0.2
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+				height: self.minimum_height
+				orientation: "vertical"
+				Button:
+					id: saveslot1
+					text: "Slot 1"
+					size_hint_y: None
+					height: 150
+					on_release: root.save_game_slot1()
+				Button:
+					id: saveslot2
+					text: "Slot 2"
+					size_hint_y: None
+					height: 150
+					on_release: root.save_game_slot2()
+				Button:
+					id: saveslot3
+					text: "Slot 3"
+					size_hint_y: None
+					height: 150
+					on_release: root.save_game_slot3()
+		Button:
+			text: "Back"
+			size_hint: 1, 0.2
+			on_release: app.root.current = "saves"
+
+<LoadMenu>
+	name: "loadmenu"
+	BoxLayout:
+		orientation: "vertical"
+		Label:
+			id: load_label
+			text: ""
+			size_hint: 1,0.2
+
+		ScrollView:
+			BoxLayout:
+				orientation: "vertical"
+				size_hint_y: None
+				height: self.minimum_height
+
+				Button:
+					id: loadslot1
+					text: "Slot 1"
+					size_hint_y: None
+					height: 150
+					on_release: root.load_game_slot1()
+				Button:
+					id: loadslot2
+					text: "Slot 2"
+					size_hint_y: None
+					height: 150
+					on_release: root.load_game_slot2()
+				Button:
+					id: loadslot3
+					text: "Slot 3"
+					size_hint_y: None
+					height: 150
+					on_release: root.load_game_slot3()	
+		Button:
+			text: "Back"
+			size_hint: 1, 0.2
+			on_release: app.root.current = "saves"
+
+<MineScreen>:
+	name: "mining"
+	BoxLayout:
+		orientation: "vertical"
+
+		Label:
+			id: money_label
+			text: ""
+			font_size: 25
+			size_hint: 1, 0.2
+		Button:
+			id: mine_button
+			text: "Mine"
+			on_release: root.mine()
+			size_hint: 1, 0.2
+		Label:
+			id: mine_rewards
+			text: ""
+			size_hint: 1, 0.2
+		Label:
+			id: m_cooldown_label
+			text: ""	
+			size_hint: 1, 0.2
+		Button:
+			text: "Back"
+			size_hint: 1, 0.2
+			on_release: app.root.current = "other"
+
+
+
+
+# UPDATE LOG DO NOT TOUCH
+<UpdateLog>:
+	name: "update"
+	BoxLayout:
+		orientation: "vertical"
+		padding: 20
+		spacing: 10
+		ScrollView:
+			BoxLayout:
+				orientation: "vertical"
+				size_hint_y: None
+				height: self.minimum_height
+				Label:
+					id: update_log_label
+					text_size: self.width, None
+					size_hint_y: None
+					height: self.texture_size[1]
+		BoxLayout:
+			size_hint: 1, 0.2
+			Button:
+				text: "Back"
+				on_release: app.root.current = "other"

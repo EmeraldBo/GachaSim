@@ -1,0 +1,68 @@
+~~~0.2~~~
+    - Added Hyfriz (Legendary)
+    - Added more common characters
+    - Added Keith and Sah Plushies
+    - Fixed up the inventory
+    - Added help screen (type help for a list of commands)
+    - Added Mining (m or "mine")
+
+~~~0.2.1~~~
+    - Fixed save function.
+    - Fixed issues with mining cooldowns
+    - Moved update log to a command.
+
+~~~0.2.2~~~
+    - Fixed sell command not including common characters
+    - Fixed cooldowns not updating
+    - Moved modded inventory to a seperate save file
+        * load mod
+
+~~~0.2.3~~~
+    - Fixed that one typo in the intro log. (augh)
+    - Added 5 save slots
+
+~~~0.2.4~~~
+    - Added Bonds
+    - Changed version numbers
+    - Fixed saves again
+
+    - "The reign of power comes into play..." 
+
+~~~<0.3>~~~
+
+    <<<Changes>>>
+        - Added Bonds Bonuses
+        - Fixed odds
+        - Changed Token bonuses
+            * Bronze: 1 > 1
+            * Silver: 2 > 2
+            * Gold: 3 > 2
+            * Diamond: 4 > 3
+
+    <<<NEW CHARACTERS>>>
+        - Mushy (Epic)
+        - Martis (Epic)
+        - Reyna (Epic)
+
+    <<<NEW RARITY>>>
+        - Added Mythic Characters
+            * 1 in 10000 Chance
+            * True Collectibles
+            * Unobtained in modded inventory
+
+    <<<NEW BONDS>>>
+        - Yin and Yang
+            * Keith and Sah
+            * "Let's take care of this, old friend." -Keith
+
+        - Interversal Cameo
+            * Baron Jager and Setsuna
+            * "Oh this'll be interesting" -Baron Jager
+
+        - Past's Servants
+            * Hyfriz, Fegelain, and Umbra
+            * "No time can remove the past" -Hyfriz
+
+        - Furries
+            * Mushy, Martis, and Reyna
+            * "Hellow, Lovely." -Martis

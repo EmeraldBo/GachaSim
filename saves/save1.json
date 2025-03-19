@@ -1,0 +1,118 @@
+{
+    "Inventory": {
+        "Mythic Characters": {
+            "Hyfriz Prime": false,
+            "Chrono Warden": false,
+            "Temporal Chimer": false,
+            "Flame Knight Ketsueki": false,
+            "White Fury Keith": false,
+            "Black Rage Sah": false,
+            "John Dick": false
+        },
+        "Legendary Characters": {
+            "Chimer": false,
+            "Ketsueki": false,
+            "Keith": false,
+            "Sah": false,
+            "Lyra": false,
+            "The Carlo": false,
+            "Nell": false,
+            "Pixel": true
+        },
+        "Epic Characters": {
+            "CheeseConsumer": false,
+            "Kito": false,
+            "Genshi": false,
+            "Carlo": false,
+            "Setsuna": false,
+            "Midori": false,
+            "Novi": false,
+            "Moshomi": false,
+            "Mushy": false,
+            "Martis": false,
+            "Reyna": false,
+            "Chambler": true,
+            "Watermelon": true
+        },
+        "Common Characters": {
+            "Benjamin": [
+                false,
+                0
+            ],
+            "Soldier": [
+                false,
+                0
+            ],
+            "Machine Gunner": [
+                false,
+                0
+            ],
+            "Tank": [
+                false,
+                0
+            ],
+            "General": [
+                false,
+                0
+            ],
+            "Pummel Voider": [
+                false,
+                0
+            ],
+            "Shred Voider": [
+                false,
+                0
+            ],
+            "Sever Voider": [
+                false,
+                0
+            ],
+            "Hew Voider": [
+                false,
+                0
+            ],
+            "Cleave Voider": [
+                false,
+                0
+            ],
+            "Dreadspike Voider": [
+                false,
+                0
+            ],
+            "Joakin": [
+                false,
+                0
+            ],
+            "Brioso": [
+                false,
+                0
+            ],
+            "Akong": [
+                false,
+                0
+            ]
+        },
+        "Plushies": {
+            "Chimer Plushie": true,
+            "Ketsueki Plushie": false,
+            "Keith Plushie": false,
+            "Sah Plushie": false,
+            "Carlo Plushie": false
+        },
+        "Tokens": {
+            "Bronze Token": false,
+            "Silver Token": false,
+            "Gold Token": false,
+            "Diamond Token": false
+        }
+    },
+    "Progress": {
+        "Money": 500,
+        "Pity": 70,
+        "Pulls": 0,
+        "Max Pity": 0,
+        "Luck Max": 75,
+        "Luck Min": 0.01,
+        "Pull Main": 50
+    }
+}
