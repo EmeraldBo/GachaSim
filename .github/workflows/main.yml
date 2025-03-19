@@ -1,0 +1,40 @@
+  name: Build Kivy APK
+
+  on:
+    push:
+      branches: [main]
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Set up Python
+          uses: actions/setup-python@v2
+          with:
+            python-version: '3.8'
+
+        - name: Install dependencies
+          run: |
+            sudo apt update
+            sudo apt install -y build-essential libssl-dev libffi-dev python3-dev python3-venv
+            python -m venv env
+            source env/bin/activate
+            pip install --upgrade pip
+            pip install buildozer cython
+
+        - name: Build APK
+          run: |
+            source env/bin/activate
+            buildozer android debug
+          env:
+            ANDROID_HOME: ${{ github.workspace }}/.buildozer/android/platform/android-sdk
+            ANDROID_NDK_HOME: ${{ github.workspace }}/.buildozer/android/platform/android-ndk-r21b
+
+        - name: Upload APK
+          uses: actions/upload-artifact@v2
+          with:
+            name: GachaSimulator.apk
+            path: bin/*.apk
