@@ -7,3 +7,4 @@ version = 0.1
 requirements = python3,kivy
 orientation = portrait
 android.permissions = INTERNET
+source.dir = .
