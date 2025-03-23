@@ -9,6 +9,7 @@ ScreenManager:
 	LoadMenu:
 	MineScreen:
 	UpdateLog:
+	ArenaMain:
 
 <MainMenu>:
 	name: "menu"
@@ -152,6 +153,11 @@ ScreenManager:
 					size_hint_y: None
 					height: 150
 					on_release: app.root.current = "update"
+				Button:
+					text: "Arena"
+					size_hint_y: None
+					height: 150
+					on_release: app.root.current = "arena_main"
 		Button:
 			text: "Back to Menu"
 			size_hint: 1, 0.2
@@ -305,7 +311,7 @@ ScreenManager:
 			size_hint: 1, 0.2
 			on_release: app.root.current = "saves"
 
-<LoadMenu>
+<LoadMenu>:
 	name: "loadmenu"
 	BoxLayout:
 		orientation: "vertical"
@@ -371,7 +377,14 @@ ScreenManager:
 			size_hint: 1, 0.2
 			on_release: app.root.current = "other"
 
-
+<ArenaMain>:
+	name: 'arena_main'
+	BoxLayout:
+		orientation: 'vertical'
+		Button:
+			text: "Back"
+			size_hint: 1, 0.2
+			on_release: app.root.current = 'other'
 
 
 # UPDATE LOG DO NOT TOUCH

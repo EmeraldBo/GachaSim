@@ -4,7 +4,8 @@ mythic_char = ["Hyfriz Prime",
 "Flame Knight Ketsueki",
 "White Fury Keith",
 "Black Rage Sah",
-"John Dick"]
+"John Dick"
+]
 
 leg_char = ["Chimer", 
 "Ketsueki", 
@@ -13,7 +14,8 @@ leg_char = ["Chimer",
 "The Carlo",  
 "Lyra",
 "Nell",
-"Hyfriz"]
+"Hyfriz"
+]
 
 epic_char = [  
 "Fegelein",
@@ -28,7 +30,8 @@ epic_char = [
 "Moshomi",
 "Mushy",
 "Martis",
-"Reyna",]
+"Reyna",
+]
 
 common_char = [
  "Benjamin", 

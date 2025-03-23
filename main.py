@@ -26,6 +26,9 @@ class OtherScreen(Screen):
 class SavesScreen(Screen):
 	pass
 
+class ArenaMain(Screen):
+	pass
+
 class UpdateLog(Screen):
 	def on_pre_enter(self):
 		with open('updatelog.txt','r') as file:
