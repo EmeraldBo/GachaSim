@@ -26,6 +26,8 @@ jobs:
         run: |
           mkdir -p $GITHUB_WORKSPACE/.android
           export ANDROID_HOME=$GITHUB_WORKSPACE/.android
+          export ANDROID_SDK_ROOT=$ANDROID_HOME
+
           mkdir -p $ANDROID_HOME/cmdline-tools
           cd $ANDROID_HOME/cmdline-tools
           curl -O https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
@@ -43,26 +45,34 @@ jobs:
           source env/bin/activate
           pip install --upgrade pip
           pip install buildozer cython
-          pip install git+https://github.com/kivy/python-for-android.git
+          pip install --no-cache-dir git+https://github.com/kivy/python-for-android.git
 
       - name: Ensure buildozer.spec exists
         run: |
           if [ ! -f buildozer.spec ]; then
+            source env/bin/activate
             buildozer init
           fi
 
-      - name: Verify Installation
+      - name: Verify Python-for-Android Installation
         run: |
           source env/bin/activate
-          buildozer -v android clean
-          ls -l .buildozer/android/platform
+          python -m pip show python-for-android || echo "python-for-android not installed"
+          buildozer -v android clean || echo "Buildozer clean failed"
+          ls -l .buildozer/android/platform || echo "Platform folder missing"
+
+      - name: Initialize Buildozer
+        run: |
+          source env/bin/activate
+          mkdir -p .buildozer/android/platform
 
       - name: Build APK
         run: |
           source env/bin/activate
-          buildozer android debug
+          buildozer -v android debug
         env:
           ANDROID_HOME: ${{ github.workspace }}/.android
+          PATH: $ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
