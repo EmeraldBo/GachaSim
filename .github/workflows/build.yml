@@ -39,6 +39,11 @@ jobs:
           yes | sdkmanager --licenses
           sdkmanager --install "platform-tools" "platforms;android-31" "build-tools;31.0.0" "ndk;21.4.7075529"
 
+      - name: Install Git
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git
+
       - name: Install Python dependencies
         run: |
           python -m venv env
